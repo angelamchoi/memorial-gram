@@ -1,6 +1,8 @@
-import * as firebase from "firebase/app";
-import 'firebase/storage'; //storage for images
-import 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA71fyVldSEl6xhXgfgnagAIPiFNAHlxBM",
@@ -12,9 +14,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
-const projectStorage = firebase.storage();
-const projectFireStore = firebase.firestore();
+const app = initializeApp(firebaseConfig);
 
-export { projectStorage, projectFireStore };
+// export default getFirestore();
+export { getFirestore, getStorage };
